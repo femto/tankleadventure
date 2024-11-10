@@ -1,0 +1,5 @@
+{{#sprites}}
+let assets : Bytes = b"{{bytes}}"
+
+let assets_stride : Int = {{width}}
+{{/sprites}}
