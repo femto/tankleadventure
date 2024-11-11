@@ -17,7 +17,7 @@ let camera_anchors : Array[Pos2D] = [
   norm_pos(55, -47),
   norm_pos(70, -32),
   norm_pos(100, -34),
-  norm_pos(99, -50)
+  norm_pos(99, -50),
 ]
 
 let anchor_radius : Double = 72

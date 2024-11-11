@@ -9,10 +9,10 @@ struct GameState {
   mut player_got_blink : Bool
   mut superturret1_live : Bool
   mut superturret2_live : Bool
-  mut cobra_live : Bool 
-  mut spider_live : Bool 
-  mut eagle_live : Bool 
-  mut turtle_live : Bool 
+  mut cobra_live : Bool
+  mut spider_live : Bool
+  mut eagle_live : Bool
+  mut turtle_live : Bool
   mut game_result : GameResult
 }
 
@@ -24,8 +24,7 @@ enum GameResult {
 
 let initial_max_armor : Int = 5
 
-let initial_pos : Pos2D = norm_pos(8, -2) 
-
+let initial_pos : Pos2D = norm_pos(8, -2)
 
 fn GameState::default() -> GameState {
   {
@@ -36,7 +35,7 @@ fn GameState::default() -> GameState {
     player_bullet_anime: solidbullet_anime,
     player_max_armor: initial_max_armor,
     player_cd: 45,
-    player_got_blink: false, 
+    player_got_blink: false,
     superturret1_live: true,
     superturret2_live: true,
     cobra_live: true,

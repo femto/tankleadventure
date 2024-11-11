@@ -7,7 +7,11 @@ fn move_system(entities : Array[Entity]) -> Unit {
     } else {
       let collision = e.shape.into_collision(e.pos2d)
       let other_collisions = collisions.filter(fn(c) { c.pos != collision.pos })
-      let (pos, _c) = move_with_collide(collision, e.velocity2d, other_collisions)
+      let (pos, _c) = move_with_collide(
+        collision,
+        e.velocity2d,
+        other_collisions,
+      )
       e.pos2d.x = pos.x
       e.pos2d.y = pos.y
     }

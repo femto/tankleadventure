@@ -220,4 +220,3 @@ let unlockgate_anime : AnimeSet = Static(
 let netgate_anime : AnimeSet = Static(
   Sprite::new(src_x=24, src_y=60, width=12, height=12),
 )
-

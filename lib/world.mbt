@@ -8,12 +8,7 @@ struct World {
 }
 
 fn World::default() -> World {
-  {
-    entities: [],
-    systems: [],
-    game_state: GameState::default(),
-    timers: [],
-  }
+  { entities: [], systems: [], game_state: GameState::default(), timers: [] }
 }
 
 let world : World = World::default()

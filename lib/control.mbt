@@ -43,7 +43,7 @@ fn control_system(entities : Array[Entity]) -> Unit {
                 v.y = @w4x.pad_horizontal() * game_state.player_speed
                 if v.x != 0 {
                   v.y *= 0.7
-                } 
+                }
                 if v.y != 0 {
                   v.x *= 0.7
                 }
@@ -77,7 +77,7 @@ fn control_system(entities : Array[Entity]) -> Unit {
                   damage: game_state.player_bullet_damage,
                   anime: game_state.player_bullet_anime,
                 },
-                Player
+                Player,
               )
               shoot_sound()
               pctrl.shoot_cd = game_state.player_cd

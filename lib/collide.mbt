@@ -44,8 +44,10 @@ test "make_ray_collision" {
 }
 
 fn get_all_collisions(entities : Array[Entity]) -> Array[Collision] {
-  entities.filter(fn (e) { e.collide }).map(
-    fn (e) {
+  entities
+  .filter(fn(e) { e.collide })
+  .map(
+    fn(e) {
       let pos2d = e.pos2d
       let rect = e.shape
       rect.into_collision(pos2d)

@@ -3,8 +3,8 @@ struct Hitbox {
 }
 
 enum Team {
-  Player 
-  Enemy 
+  Player
+  Enemy
   Other
 } derive(Eq, Show)
 
