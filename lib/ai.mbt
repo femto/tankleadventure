@@ -28,7 +28,7 @@ fn get_action_set(ai : Ai) -> ActionSet {
         actions: [
           Once(OrientPlayer, 0),
           Last(MoveForward(0.6), 0, 60),
-          Last(Stand, 60, 120),
+          Once(Stand, 60),
           Once(OrientPlayer, 60),
           Once(ShootForward(40, 0.6, 1), 70),
         ],
