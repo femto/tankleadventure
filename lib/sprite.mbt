@@ -1,19 +1,19 @@
 struct Sprite {
   image : Bytes
   stride : Int
-  mut src_x : Int
-  mut src_y : Int
+  src_x : Int
+  src_y : Int
   width : Int
   height : Int
   colors : Int
 }
 
 fn Sprite::new(
-  ~src_x : Int,
-  ~src_y : Int,
-  ~width : Int,
-  ~height : Int,
-  ~colors : Int = 0x4320
+  src_x~ : Int,
+  src_y~ : Int,
+  width~ : Int,
+  height~ : Int,
+  colors~ : Int = 0x4320
 ) -> Sprite {
   Sprite::{
     image: assets,
@@ -30,7 +30,7 @@ fn Sprite::draw(
   sprite : Sprite,
   pos : Pos2D,
   dir : Direction4,
-  ~onscreen : Bool = false
+  onscreen~ : Bool = false
 ) -> Unit {
   let (flip_x, flip_y, rotate) = dir.to_flips()
   let pos = if onscreen {

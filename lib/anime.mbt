@@ -1,5 +1,5 @@
 enum AnimeSet {
-  Car8(~udlr : AnimeSequence, ~diag : AnimeSequence, mut ~frame_counter : Int)
+  Car8(udlr~ : AnimeSequence, diag~ : AnimeSequence, mut frame_counter~ : Int)
   Static(Sprite)
   Rect(Sprite, Int, Int)
 }

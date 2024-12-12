@@ -1,4 +1,4 @@
-pub struct GamePad {
+pub(all) struct GamePad {
   button_1 : Bool
   button_2 : Bool
   button_left : Bool
@@ -9,7 +9,7 @@ pub struct GamePad {
 
 let address_GAMEPADS = 0x16
 
-pub fn get_gamepad(~index : UInt = 1) -> GamePad {
+pub fn get_gamepad(index~ : UInt = 1) -> GamePad {
   if index.reinterpret_as_int() > 4 {
     @wasm4.trace("Gamepad index out of range")
     panic()
@@ -25,13 +25,13 @@ pub fn get_gamepad(~index : UInt = 1) -> GamePad {
   }
 }
 
-pub struct PressedPad {
+pub(all) struct PressedPad {
   index : UInt
   mut previous : GamePad
 }
 
-pub fn PressedPad::new(~index : UInt = 1) -> PressedPad {
-  { index, previous: get_gamepad(~index) }
+pub fn PressedPad::new(index~ : UInt = 1) -> PressedPad {
+  { index, previous: get_gamepad(index~) }
 }
 
 pub fn PressedPad::get_pressed_buttons(self : PressedPad) -> GamePad {
@@ -48,8 +48,8 @@ pub fn PressedPad::get_pressed_buttons(self : PressedPad) -> GamePad {
   pressed
 }
 
-pub fn pad_vertical(~index : UInt = 1) -> Double {
-  let pad = get_gamepad(~index)
+pub fn pad_vertical(index~ : UInt = 1) -> Double {
+  let pad = get_gamepad(index~)
   if pad.button_right && not(pad.button_left) {
     1
   } else if pad.button_left && not(pad.button_right) {
@@ -59,8 +59,8 @@ pub fn pad_vertical(~index : UInt = 1) -> Double {
   }
 }
 
-pub fn pad_horizontal(~index : UInt = 1) -> Double {
-  let pad = get_gamepad(~index)
+pub fn pad_horizontal(index~ : UInt = 1) -> Double {
+  let pad = get_gamepad(index~)
   if pad.button_down && not(pad.button_up) {
     1
   } else if pad.button_up && not(pad.button_down) {

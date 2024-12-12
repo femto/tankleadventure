@@ -273,7 +273,7 @@ fn make_gate(x : Int, y : Int, dir : Direction8) -> Entity {
     collide: true,
     hitbox: None,
     hurtbox: Some(Rigid),
-    ori: Orientation::new(~dir),
+    ori: Orientation::new(dir~),
     anime: gate_anime,
     after: None,
     control: None,

@@ -89,7 +89,7 @@ struct Orientation {
   mut dir : Direction8
 }
 
-fn Orientation::new(~dir : Direction8 = Up) -> Orientation {
+fn Orientation::new(dir~ : Direction8 = Up) -> Orientation {
   Orientation::{ moving: false, dir }
 }
 

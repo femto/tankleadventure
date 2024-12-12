@@ -11,7 +11,7 @@ fn After::op_shr(self : After, other : After) -> After {
   }
 }
 
-fn make_unlock_event(pos : Pos2D, ~cond : () -> Bool = fn() { true }) -> After {
+fn make_unlock_event(pos : Pos2D, cond~ : () -> Bool = fn() { true }) -> After {
   let event = fn() -> Unit {
     if not(cond()) {
       return

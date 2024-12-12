@@ -1,5 +1,5 @@
 struct Hitbox {
-  mut damage : Int
+  damage : Int
 }
 
 enum Team {
@@ -10,11 +10,11 @@ enum Team {
 
 enum Hurtbox {
   Rigid
-  Nonrigid(mut ~health : Int, mut ~invincible : Bool, ~invince_time : Int)
+  Nonrigid(mut health~ : Int, mut invincible~ : Bool, invince_time~ : Int)
 }
 
-fn Hurtbox::nonrigid(health : Int, ~invince_time : Int = 1) -> Hurtbox {
-  Nonrigid(~health, invincible=false, ~invince_time)
+fn Hurtbox::nonrigid(health : Int, invince_time~ : Int = 1) -> Hurtbox {
+  Nonrigid(health~, invincible=false, invince_time~)
 }
 
 fn hit_system(entities : Array[Entity]) -> Unit {

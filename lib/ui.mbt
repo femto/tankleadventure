@@ -9,7 +9,7 @@ fn player_life() -> Unit {
   player.hurtbox.map(
     fn(hurtbox) {
       match hurtbox {
-        Hurtbox::Nonrigid(~health, invince_time=_, invincible=_) => {
+        Hurtbox::Nonrigid(health~, invince_time=_, invincible=_) => {
           let length = armor_max * 8 + 4
           @w4x.set_draw_colors(0x0033)
           @wasm4.rect(6, 3, length, 10)

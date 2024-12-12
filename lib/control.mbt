@@ -1,6 +1,6 @@
 enum Control {
-  Player(@w4x.PressedPad, mut ~shoot_cd : Int, mut ~blink_cd : Int)
-  Enemy(Ai, mut ~frame_counter : Int)
+  Player(@w4x.PressedPad, mut shoot_cd~ : Int, mut blink_cd~ : Int)
+  Enemy(Ai, mut frame_counter~ : Int)
 }
 
 fn Control::player() -> Control {
@@ -26,7 +26,7 @@ fn control_system(entities : Array[Entity]) -> Unit {
         let ori = e.ori
         let pos = e.pos2d
         match ctrl {
-          Player(pad, ~shoot_cd, ~blink_cd) as pctrl => {
+          Player(pad, shoot_cd~, blink_cd~) as pctrl => {
             let pressed = pad.get_pressed_buttons()
             // moving
             if blink_cd <= player_blink_cd - blink_maintain {
@@ -83,7 +83,7 @@ fn control_system(entities : Array[Entity]) -> Unit {
               pctrl.shoot_cd = game_state.player_cd
             }
           }
-          Enemy(ai, ~frame_counter) as enemy => {
+          Enemy(ai, frame_counter~) as enemy => {
             let collision = e.shape.into_collision(pos)
             let camera_fake_collision = {
               size: { width: 172, height: 172 },

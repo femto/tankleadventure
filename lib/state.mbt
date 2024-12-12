@@ -5,7 +5,7 @@ struct GameState {
   mut player_bullet_traj : Double
   mut player_bullet_anime : AnimeSet
   mut player_max_armor : Int
-  mut player_cd : Int
+  player_cd : Int
   mut player_got_blink : Bool
   mut superturret1_live : Bool
   mut superturret2_live : Bool
